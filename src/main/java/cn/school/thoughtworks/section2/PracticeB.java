@@ -3,7 +3,6 @@ package cn.school.thoughtworks.section2;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class PracticeB {
     Map<String, Integer> countSameElements(List<String> collection1) {
@@ -11,8 +10,7 @@ public class PracticeB {
         Map<String, Integer> res = new HashMap<>();
 
         for(String str : collection1) {
-            String pattern = ".-.";
-            if(Pattern.matches(pattern, str)) {
+            if(str.contains("-")) {
                 String[] strs = str.split("-");
                 res.put(strs[0], Integer.parseInt(strs[1]));
             } else {
